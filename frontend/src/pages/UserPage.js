@@ -33,7 +33,6 @@ export default class UserPage extends React.Component {
       this.setState({pageContent: this.props.pageContent})
   }
 
-
   render() {
     const { isNavOpen, pageContent } = this.state;
 
@@ -54,7 +53,7 @@ export default class UserPage extends React.Component {
               <Link to="/about">about</Link>
             </PageHeaderToolsItem>
             <PageHeaderToolsItem className="header-item">
-              <Swagger/>
+              <Link to="/api/swagger">API docs</Link>
             </PageHeaderToolsItem>
             <PageHeaderToolsItem className="header-item">
               <Link to="/user-details">username</Link> 

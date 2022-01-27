@@ -1,5 +1,5 @@
-* {
-  font-family: 'Overpass', sans-serif;
+:root {
+  --global--ItemPadding--sm: 10px;
 }
 
 body {
@@ -13,31 +13,13 @@ code {
     monospace;
 }
 
-.blueprints-container {
-  max-width: 100%;
+.app-container {
+  height: 100vh;
 }
 
-.card-custom {
-  max-width: 328px;
-  margin: 0 auto;
+.header-item {
+  padding: var(--global--ItemPadding--sm);
 }
-
-.form-container {
-  max-width: 100%
-}
-
-.form-custom {
-  max-width: 328px;
-  margin: 0 auto;
-}
-
-.nav-header, .nav-link-text {
-  color: white;
-  padding-top: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
 
 
 

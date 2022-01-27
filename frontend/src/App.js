@@ -1,11 +1,12 @@
 import './App.css';
 import React from 'react';
 import { Header, List, Button, Form } from './components';
+import UserPage from './pages/UserPage';
 
 function App() {
   return (
-    <div className='App'>
-      <Header/>
+    <div className="app-container">
+      <UserPage/>
     </div>
   );
 }
