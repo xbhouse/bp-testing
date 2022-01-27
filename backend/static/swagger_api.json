@@ -1,0 +1,288 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "description" : "Blueprint",
+    "version" : "3.0",
+    "title" : "Swagger - Blueprint API",
+    "termsOfService" : "http://swagger.io/terms/",
+    "contact" : {
+      "email" : "someone@somewhere.com"
+    }
+  },
+  "tags" : [ {
+    "name" : "blueprint",
+    "description" : "operations on blueprint"
+  }, {
+    "name" : "request",
+    "description" : "operations on CMP request"
+  }],
+  "paths" : {
+    "/api/blueprints" : {
+      "get" : {
+        "tags" : [ "blueprint" ],
+        "summary" : "get all blueprints",
+        "operationId" : "listBlueprints",
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "blueprint" ],
+        "summary" : "create blueprint",
+        "operationId" : "createBlueprint",
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/blueprint"
+              }
+            }
+          },
+          "description" : "create blueprint object",
+          "required" : true
+        }
+      }
+    },
+    "/api/blueprints/{blueprint_id}" : {
+      "get" : {
+        "tags" : [ "blueprint" ],
+        "summary" : "get blueprint by id",
+        "operationId" : "getBlueprint",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "the blueprint to get",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/blueprint"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "invalid blueprint name supplied"
+          },
+          "404" : {
+            "description" : "blueprint not found"
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "blueprint" ],
+        "summary" : "update blueprint",
+        "operationId" : "updateBlueprint",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "id of blueprint to update",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "400" : {
+            "description" : "invalid blueprint supplied"
+          },
+          "404" : {
+            "description" : "blueprint not found"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/blueprint"
+              }
+            }
+          },
+          "description" : "updated blueprint object",
+          "required" : true
+        }
+      },
+      "delete" : {
+        "tags" : [ "blueprint" ],
+        "summary" : "delete blueprint",
+        "operationId" : "deleteBlueprint",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "id of blueprint to delete",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "400" : {
+            "description" : "invalid blueprint supplied"
+          },
+          "404" : {
+            "description" : "blueprint not found"
+          }
+        }
+      }
+    },
+    "/api/requests" : {
+      "get" : {
+        "tags" : [ "request" ],
+        "summary" : "get all requests",
+        "operationId" : "listRequests",
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "request" ],
+        "summary" : "create request",
+        "operationId" : "createRequest",
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/request"
+              }
+            }
+          },
+          "description" : "create request object",
+          "required" : true
+        }
+      }
+    },
+    "/api/requests/{request_id}" : {
+      "get" : {
+        "tags" : [ "request" ],
+        "summary" : "get request by id",
+        "operationId" : "getRequest",
+        "parameters" : [ {
+          "name" : "request_id",
+          "in" : "path",
+          "description" : "the request to get",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/request"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "invalid id supplied"
+          },
+          "404" : {
+            "description" : "request not found"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "request" : {
+        "type" : "object",
+        "required" : [ "id", "user", "status" ],
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "description" : "request id"
+          },
+          "user" : {
+            "type" : "string",
+            "description" : "user that made the request"
+          },
+          "status" : {
+            "type" : "string",
+            "description" : "request status",
+            "enum" : [ "pending", "submitted", "approved" ]
+          }
+        }
+      },
+      "blueprint" : {
+        "type" : "object",
+        "required" : [ "id", "name", "cluster", "user" ],
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "cluster" : {
+            "type" : "string",
+            "description" : "openshift cluster where blueprint is deployed"
+          },
+          "user" : {
+            "type" : "string",
+            "description" : "user owner of this blueprint"
+          },
+          "createDate" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "exempt" : {
+            "type" : "boolean",
+            "description" : "exempt blueprint from auto delete after X days"
+          },
+          "region" : {
+            "type" : "string",
+            "description" : "region/datacenter where blueprint is deployed",
+            "enum" : [ "NAM", "LATAM", "APAC", "EU" ]
+          },
+          "status" : {
+            "type" : "string",
+            "description" : "status of the blueprint",
+            "enum" : [ "pending", "active", "deleted" ]
+          },
+          "template" : {
+            "type" : "string",
+            "description" : "type of blueprint (namespace, VM, etc)"
+          },
+          "num_likes" : {
+            "type" : "string",
+            "description" : "number of likes on a blueprint"
+          },
+          "liked_by_users" : {
+            "type" : "array",
+            "description" : "list of users that liked this blueprint",
+            "items" : {
+              "type" : "string",
+              "description": "user"
+            }
+          }
+        }
+      }
+    }
+  }
+}
