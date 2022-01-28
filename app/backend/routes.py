@@ -244,7 +244,6 @@ def like_template(template_id):
   user = str(args['user'])
   if BLUEPRINT_TEMPLATES.get(template_id, None):
     if author not in BLUEPRINT_TEMPLATES[template_id]['liked_by_users']:
-      BLUEPRINT_TEMPLATES[template_id]['num_likes'] += 1
       BLUEPRINT_TEMPLATES[template_id]['liked_by_users'].append(user)
       status = 200
       response = {'message': f'blueprint template {template_id} liked by user {user}'}
