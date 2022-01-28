@@ -1,5 +1,5 @@
-* {
-  font-family: "Overpass", sans-serif;
+:root {
+  --global--ItemPadding--sm: 10px;
 }
 
 body {
@@ -13,37 +13,10 @@ code {
     monospace;
 }
 
-.blueprints-container {
-  max-width: 100%;
+.app-container {
+  height: 100vh;
 }
 
-.card-custom {
-  max-width: 328px;
-  margin: 0 auto;
-}
-
-.form-container {
-  max-width: 100%;
-}
-
-.form-custom {
-  max-width: 328px;
-  margin: 0 auto;
-}
-
-.nav-header {
-  color: white;
-}
-
-.nav-link-text {
-  color: white;
-  padding-top: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.Sidebar {
-  height: 100%;
-  width: 250px;
-  background-color: aqua;
+.header-item {
+  padding: var(--global--ItemPadding--sm);
 }

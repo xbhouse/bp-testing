@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { Header, List, Button, Form, Sidebar } from './components';
+import { Header, Sidebar } from './components';
 
 function App() {
   return (
