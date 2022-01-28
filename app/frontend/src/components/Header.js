@@ -6,13 +6,13 @@ const Header = () => {
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="https://openshift.com"><h2 className="nav-header">Helix Blueprints</h2></a>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <div class="collapse navbar-collapse" id="nav-bar-id">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="#"><p className="nav-link-text">Home</p></a>
+            <a class="nav-link active" href="/about"><p className="nav-link-text">About</p></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><Swagger/></a>
+            <p class="nav-link"><Swagger/></p>
           </li>
         </ul>
       </div>

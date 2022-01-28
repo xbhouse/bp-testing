@@ -1,11 +1,12 @@
 import './App.css';
 import React from 'react';
-import { Header, List, Button, Form } from './components';
+import { Header, List, Button, Form, Sidebar } from './components';
 
 function App() {
   return (
     <div className='App'>
       <Header/>
+      <Sidebar/>
     </div>
   );
 }

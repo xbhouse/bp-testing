@@ -1,5 +1,5 @@
 * {
-  font-family: 'Overpass', sans-serif;
+  font-family: "Overpass", sans-serif;
 }
 
 body {
@@ -9,7 +9,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -23,7 +23,7 @@ code {
 }
 
 .form-container {
-  max-width: 100%
+  max-width: 100%;
 }
 
 .form-custom {
@@ -31,13 +31,19 @@ code {
   margin: 0 auto;
 }
 
-.nav-header, .nav-link-text {
+.nav-header {
   color: white;
-  padding-top: 1rem;
+}
+
+.nav-link-text {
+  color: white;
+  padding-top: 2rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-
-
-
+.Sidebar {
+  height: 100%;
+  width: 250px;
+  background-color: aqua;
+}

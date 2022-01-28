@@ -1,5 +1,5 @@
-import React from "react";
-import LikeButton from "./LikeButton";
+import React from 'react';
+import LikeButton from './LikeButton';
 
 const Blueprint = (props) => {
 

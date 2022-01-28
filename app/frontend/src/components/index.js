@@ -4,3 +4,4 @@ export { default as Blueprint } from './Blueprint';
 export { default as Header } from './Header';
 export { default as List } from './List';
 export { default as Form } from './Form';
+export { default as Sidebar } from './Sidebar';
