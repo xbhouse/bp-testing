@@ -1,7 +1,23 @@
+:root {
+  --padding-above-lg: 5rem; 
+  --padding-above-sm: 0.5rem;
+}
+
 .App {
   text-align: center;
 }
 
-.form-container {
-  padding-top: 5%;
+.form-container, .splash-page-container {
+  padding-top: var(--padding-above-lg);
+}
+
+.header-text,
+.header-link,
+.page-title {
+  color: white;
+}
+
+.header-text,
+.header-link {
+  padding-top: var(--padding-above-sm);
 }

@@ -1,0 +1,13 @@
+{
+  "labels":  ["Region", "Sector"],
+  "headerItems": [
+    {
+      "endpoint": "/about", 
+      "display": "about"
+    },
+    {
+      "endpoint": "/api/swagger",
+      "display": "API docs" 
+    }
+  ]
+}

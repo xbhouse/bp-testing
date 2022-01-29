@@ -1,20 +1,25 @@
 import React from 'react';
+const data = require('../data/data.json');
+console.log(data.headerItems[0])
+
 
 const Header = () => {
+
+  const renderHeader = (data.headerItems).map((item, index) => {
+    return (
+      <li key={index} className="nav-item">
+        <a className="nav-link active" href={item[0]}><p className="header-text">{item[1]}</p></a>
+      </li>
+    );
+  })
+
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="https://openshift.com"><h2 className="nav-header">Helix Blueprints</h2></a>
-      <div class="collapse navbar-collapse" id="nav-bar-id">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="/about"><p className="nav-link-text">About</p></a>
-          </li>
-          <li class="nav-item">
-            <p class="nav-link">Swagger</p>
-          </li>
+    <nav className="navbar navbar-expand-lg navbar-light bg-dark">
+    <div className="container-fluid">
+      <a className="navbar-brand" href="https://openshift.com"><h2 className="nav-header page-title">Helix Blueprints</h2></a>
+        <ul className="navbar-nav me-auto">
+          {renderHeader}
         </ul>
-      </div>
     </div>
   </nav>
   )

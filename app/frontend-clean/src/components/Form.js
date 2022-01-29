@@ -1,29 +1,47 @@
-import React, {useState} from 'react';
+import React from 'react';
+const data = require('../data/data.json');
 
-const Form = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [region, setRegion] = useState("");
+export default class Form extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
 
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-  return (
-    <form>
-      <div class="form-group row form-container">
-        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-        <div class="col-sm-4">
-          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"/>
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    // api call to submit request
+  }
+  
+
+  render() {
+    return (
+      <div className="form-container">
+        <form onSubmit={this.handleSubmit}>
+        <div className="form-group">
+          <label>
+            Username
+            <input type="text" readOnly value="default" /> 
+          </label>
         </div>
+        {(data.labels).map((label, index) => {
+          return (
+            <div className="form-group" key={index}>
+              <label>
+                {label}
+                <input type="text" onChange={this.handleChange} />
+              </label>
+            </div>
+          );
+        })}
+        <input type="submit" value="Submit request"/>
+        </form>
       </div>
-      <div class="form-group row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-        <div class="col-sm-4">
-          <input type="password" class="form-control" id="inputPassword" placeholder="Password"/>
-        </div>
-      </div>
-    </form>
-
-  )
-  //axios.post({data})
+    );
+  } 
 }
-
-export default Form;
