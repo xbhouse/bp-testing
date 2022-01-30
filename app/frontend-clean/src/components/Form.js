@@ -1,13 +1,21 @@
 import React, {useState} from 'react';
+<<<<<<< HEAD
 import Button from './Button.js';
+=======
+import Select from './Select';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+const constData = require('../data/data.json');
+>>>>>>> 59c43609ababd54a2f7dc8905f455ae9630a34e2
 
-const Form = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [region, setRegion] = useState("");
+const SubmitRequestForm = () => {
 
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  }
+  
   return (
+<<<<<<< HEAD
     <form className="form-container">
       <div className="form-group row">
         <label htmlFor="staticEmail" className="col-sm-2 col-form-label">Email</label>
@@ -34,6 +42,37 @@ const Form = () => {
       </div>
     </form>
   )
+=======
+    <div className="form-container">
+      <Form>
+        <form>
+        <fieldset disabled>
+          <Form.Group className="mb-3">
+            <div className="form-group">
+              <h3 className="form-title"><b>Request Authorization</b></h3>
+              <Form.Label className="form-label">Your username</Form.Label>
+                <Form.Control id="disabledTextInput" placeholder="autofilled username" />            
+            </div>
+          </Form.Group>
+        </fieldset>
+        {(constData.labels).map((label, index) => {
+          return (
+            <Form.Group className="mb-3">
+              <div className="form-group" key={index}>
+                <Select options={constData.dropdown[index].options} label={label} />
+              </div>
+            </Form.Group>
+          );
+        })}
+        <div className="button-container">
+          <Button variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
+        </div>
+        </form>
+      </Form>
+    </div>
+  );
+
+>>>>>>> 59c43609ababd54a2f7dc8905f455ae9630a34e2
 }
 
-export default Form;
+export default SubmitRequestForm;
