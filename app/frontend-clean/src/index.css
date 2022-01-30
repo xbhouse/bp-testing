@@ -1,14 +1,29 @@
 :root {
-  --padding-above-lg: 5rem; 
+  --padding-above-lg: 5rem;
   --padding-above-sm: 0.5rem;
+  --total-padding-sm: 1rem;
 }
 
-.App {
+.splash-page-container {
+  padding-top: var(--padding-above-lg);
   text-align: center;
 }
 
-.form-container, .splash-page-container {
-  padding-top: var(--padding-above-lg);
+.form-container {
+  padding-top: var(--padding-above-sm);
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+  margin-right: 30rem;
+  margin-left: 30rem;
+  border: 1px solid;
+}
+
+.form-title {
+  margin-bottom: 2.5rem;
+}
+
+.form-group {
+  padding: var(--total-padding-sm);
 }
 
 .header-text,
@@ -20,4 +35,9 @@
 .header-text,
 .header-link {
   padding-top: var(--padding-above-sm);
+}
+
+.button-container {
+  text-align: center;
+  margin-bottom: 5rem;
 }

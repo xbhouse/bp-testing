@@ -8,6 +8,18 @@
     {
       "endpoint": "/api/swagger",
       "display": "API docs" 
+    },
+    {
+      "endpoint": "/api/user-details",
+      "display": "username" 
+    }
+  ],
+  "dropdown": [
+    {
+      "options": ["NAM", "LATAM", "APAC", "EU"]
+    },
+    {
+      "options": ["ICG", "GCB"]
     }
   ]
 }

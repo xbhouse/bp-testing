@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import axios from 'axios';
-import {Form, Header, SubmitRequest} from './components';
+import {SubmitRequestForm, Header, SubmitRequest} from './components';
 import './index.css';
 
 export const App = () => {
@@ -11,7 +10,7 @@ export const App = () => {
     <div className="App">
       {<Header/>}
       {<SubmitRequest/>}
-      {<Form/>}
+      {<SubmitRequestForm/>}
     </div>
   )
 }
