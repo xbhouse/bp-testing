@@ -33,8 +33,8 @@ spec:
     port: 5000
     targetPort: 5000
   - name: bp-frontend
-    port: 8000
-    targetPort: 8000
+    port: 3000
+    targetPort: 3000
   selector:
     app: authenticated-app
 ---
@@ -83,7 +83,7 @@ spec:
         - --openshift-service-account=blueprint
         - --upstream=http://localhost:5000/       # swagger
         - --upstream=http://localhost:5000/api    # api backend
-        - --upstream=http://localhost:8000/app    # app frontend
+        - --upstream=http://localhost:3000/app    # app frontend
         - --tls-cert=/etc/tls/private/tls.crt
         - --tls-key=/etc/tls/private/tls.key
         - --cookie-secret=OHpq3J2iSSqL0w8isP3dDNnJ9aRQM9BMblzFsslWvm7
@@ -93,9 +93,9 @@ spec:
         - mountPath: /etc/tls/private
           name: oauth-proxy-tls
       - name: bp-backend    # this listen on port 5000
-        image: quay.io/bhouse/bp-backend:1.0.4
+        image: quay.io/bhouse/bp-backend:1.0
       - name: bp-frontend    # this listen on port 8000
-        image: quay.io/bhouse/testing-ui:1.0.7
+        image: quay.io/bhouse/bp-frontend:1.0.1
       serviceAccountName: blueprint
       volumes:
       - name: oauth-proxy-tls

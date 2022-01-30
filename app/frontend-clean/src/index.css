@@ -1,7 +1,43 @@
+
+:root {
+  --global--ItemPadding--sm: 10px;
+  --global--HeaderItemPadding--sm: 2rem;
+  --global--ContainerHeight--100: 100vh;
+}
+
 .App {
   text-align: center;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.app-container {
+  height: var(--global--ContainerHeight--100);
+}
+
+.nav-header {
+  color: white;
+}
+
+.nav-link-text {
+  color: white;
+  padding-top: var(--global--ItemPadding--sm);
 }
 
 .form-container {
   padding-top: 5%;
 }
+
+.submit-button-container {
+  padding-top: var(--global--HeaderItemPadding--sm);
+}
+ 

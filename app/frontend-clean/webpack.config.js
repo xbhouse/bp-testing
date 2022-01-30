@@ -1,18 +1,23 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     mode: 'development',
     // where webpack will start bundling
     entry: path.join(__dirname, "src", "index.js"),
-    // output of bundled file
+    // output of bundled file and base path for all assets
     output: {
         path: path.resolve(__dirname, "dist"),
+        publicPath: '/app'
     },
     devServer: {
+      host: '0.0.0.0',
+      port: 3000,
       proxy: {
         '/api': 'http://localhost:5000',
-      }
+      },
+      allowedHosts: ['all']
     },
     module: {
         rules: [
@@ -43,5 +48,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "src", "index.html"),
         }),
+        new Dotenv()
     ],
 }
