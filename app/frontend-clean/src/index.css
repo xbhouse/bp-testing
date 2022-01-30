@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-
-:root {
-  --global--ItemPadding--sm: 10px;
-  --global--HeaderItemPadding--sm: 2rem;
-  --global--ContainerHeight--100: 100vh;
-}
-
-.App {
-=======
 :root {
   --padding-above-lg: 5rem;
   --padding-above-sm: 0.5rem;
@@ -26,7 +16,6 @@ html {
 
 .splash-page-container {
   padding-top: var(--padding-above-lg);
->>>>>>> 59c43609ababd54a2f7dc8905f455ae9630a34e2
   text-align: center;
 }
 

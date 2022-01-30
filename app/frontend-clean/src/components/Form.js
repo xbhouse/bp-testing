@@ -1,12 +1,8 @@
 import React, {useState} from 'react';
-<<<<<<< HEAD
-import Button from './Button.js';
-=======
 import Select from './Select';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 const constData = require('../data/data.json');
->>>>>>> 59c43609ababd54a2f7dc8905f455ae9630a34e2
 
 const SubmitRequestForm = () => {
 
@@ -15,34 +11,6 @@ const SubmitRequestForm = () => {
   }
   
   return (
-<<<<<<< HEAD
-    <form className="form-container">
-      <div className="form-group row">
-        <label htmlFor="staticEmail" className="col-sm-2 col-form-label">Email</label>
-        <div className="col-sm-4">
-          <input type="text" readOnly className="form-control-plaintext" id="email" value="email@example.com"/>
-        </div>
-      </div>
-      <div className="form-group row">
-        <label htmlFor="sector" className="col-sm-2 col-form-label">Sector</label>
-        <div className="col-sm-4">
-          <input type="Sector" className="form-control" id="sector" placeholder="Your sector"/>
-        </div>
-      </div>
-      <div className="form-group row">
-        <label htmlFor="region" className="col-sm-2 col-form-label">Region</label>
-        <div className="col-sm-4">
-          <input type="Region" className="form-control" id="region" placeholder="Your region"/>
-        </div>
-      </div>
-      <div className="form-group row">
-        <div className="col-sm-7 submit-button-container">
-          <Button endpoint="requests" operation="Submit" param="request"/>
-        </div>
-      </div>
-    </form>
-  )
-=======
     <div className="form-container">
       <Form>
         <form>
@@ -72,7 +40,6 @@ const SubmitRequestForm = () => {
     </div>
   );
 
->>>>>>> 59c43609ababd54a2f7dc8905f455ae9630a34e2
 }
 
 export default SubmitRequestForm;
